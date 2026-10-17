@@ -95,7 +95,11 @@ npx acme-checksheet --exceptions-only   # 例外の行だけ。例外がなけ�
 
 ## 公開
 
-`npm version minor && git push --follow-tags` で、GitHub Actions（`release.yml`）が CodeArtifact に公開します。リポジトリ変数 `AWS_ACCOUNT_ID` が必要です。
+```bash
+scripts/release.sh minor   # patch：不具合の修正  minor：互換のある変更  major：互換が崩れる変更
+```
+
+main の最新でテストし、`npm version` で版を上げてタグ（`v1.2.3`）を push します。タグの push で GitHub Actions（`release.yml`）が CodeArtifact に公開し、スクリプトはその結果を待ちます。同じ位置に `release/v1.2.3` のブランチも作ります（タグは動かせないので、その版から作業するときはこのブランチを使います）。リポジトリ変数 `AWS_ACCOUNT_ID` が必要です。
 
 ## メモ
 
