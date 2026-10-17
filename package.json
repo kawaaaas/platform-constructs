@@ -1,6 +1,6 @@
 {
   "name": "@acme/platform",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "インフラチームが配る部品（Stage・Stack・追加部品・チェックシートのルール）",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
