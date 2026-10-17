@@ -17,7 +17,7 @@ import { aws_cloudfront as cloudfront, aws_logs as logs } from 'aws-cdk-lib';
  */
 export const POLICY = {
   /** INF-07 ログを定めた期間保管する ← 【デモ3】2社目の基準に合わせて ONE_YEAR に変える1行 */
-  logRetention: logs.RetentionDays.SIX_MONTHS,
+  logRetention: logs.RetentionDays.ONE_YEAR,
   /** INF-21 外部との通信をTLSで暗号化する（入口の CloudFront が受け付ける最低の TLS） */
   minimumTls: cloudfront.SecurityPolicyProtocol.TLS_V1_2_2021,
   /** 入口の WAF：同じIPからのアクセスを、5分あたりこの回数までに抑える（クローラーやボットの連打を止める） */
