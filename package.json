@@ -1,0 +1,35 @@
+{
+  "name": "@acme/platform",
+  "version": "1.0.0",
+  "description": "インフラチームが配る部品（Stage・Stack・追加部品・チェックシートのルール）",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "acme-checksheet": "lib/bin/acme-checksheet.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "rules:list": "node lib/bin/rules-list.js",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.200.0",
+    "constructs": "^10.0.0"
+  },
+  "dependencies": {
+    "cdk-nag": "2.38.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.0",
+    "aws-cdk-lib": "2.273.0",
+    "constructs": "10.8.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.0",
+    "typescript": "~5.8.3"
+  }
+}
